@@ -1,0 +1,104 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'Simples Hyper Terminal'
+  ClientHeight = 249
+  ClientWidth = 333
+  FormStyle = Popup
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnClose = FormClose
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object ButtonConfigura: TButton
+    Height = 22.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 3
+    Text = 'Configura'
+    Width = 121.000000000000000000
+    OnClick = ButtonConfiguraClick
+  end
+  object ButtonEnvia: TButton
+    Height = 22.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 40.000000000000000000
+    TabOrder = 2
+    Text = 'Envia'
+    Width = 121.000000000000000000
+    OnClick = ButtonEnviaClick
+  end
+  object ButtonRecebe: TButton
+    Height = 22.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 72.000000000000000000
+    TabOrder = 1
+    Text = 'Recebe'
+    Width = 121.000000000000000000
+    OnClick = ButtonRecebeClick
+  end
+  object EditEnvia: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 136.000000000000000000
+    Position.Y = 40.000000000000000000
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object EditRecebe: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 136.000000000000000000
+    Position.Y = 72.000000000000000000
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object Label1: TLabel
+    StyledSettings = [Family, FontColor]
+    Height = 17.000000000000000000
+    Position.X = 200.000000000000000000
+    Position.Y = 8.000000000000000000
+    TextSettings.Font.Size = 14.000000000000000000
+    Text = 'Porta:'
+    Width = 41.000000000000000000
+  end
+  object EditPorta: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 248.000000000000000000
+    Position.Y = 8.000000000000000000
+    Width = 73.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Height = 137.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 104.000000000000000000
+    TabOrder = 8
+    Width = 313.000000000000000000
+    Lines.Strings = (
+      'Observa'#231#245'es:'
+      '1)Configura'#231#227'o Padr'#227'o:'
+      'Bauld Rate: 300 baulds'
+      'Byte Size: 8 bits'
+      'Paridade: Sem bit de Paridade'
+      'Stop Bit: 1 bit de stop'
+      ''
+      '2) Recebe somente 1 bit por vez.'
+      ''
+      '3) Recompilar com o caminho para o arquiv'
+      'o DriveSerial.dll dispon'#237'vel em:'
+      'https://github.com/LeandroTeodoroRJ/DriveSerial'
+      '(Vers'#245'es para 32 e 64 bits)'
+      ''
+      '4)Compilado no Delphi XE6.')
+    ReadOnly = True
+  end
+end
