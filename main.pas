@@ -29,17 +29,17 @@ type
 
 var
   FormMain: TFormMain;
-  function AbrirPortaSerial(NomePorta:String):integer; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
+  function AbrirPortaSerial(NomePorta:String):integer; stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function ConfiguraUART
   (bauld:integer; Byte_Size: Byte; Paridade:integer; Stop_bit:integer):boolean;
-  external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
+  stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
 implementation
   procedure FecharPorta; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function config_porta():boolean; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function TX_catacter(var tx:AnsiChar):boolean; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   procedure le_porta; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function bytes_ler(): integer; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
-  function recebe_dado(count:integer): char; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
+  function recebe_dado(count:integer): char; stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   {$R *.fmx}
 
 procedure TFormMain.ButtonConfiguraClick(Sender: TObject);
