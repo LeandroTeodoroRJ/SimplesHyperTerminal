@@ -5,7 +5,6 @@ object FormMain: TFormMain
   Caption = 'Simples Hyper Terminal'
   ClientHeight = 249
   ClientWidth = 333
-  FormStyle = Popup
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop, iPhone, iPad]
