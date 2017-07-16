@@ -17,10 +17,15 @@ type
     Label1: TLabel;
     EditPorta: TEdit;
     Memo1: TMemo;
+    EditRecebeDec: TEdit;
+    Label2: TLabel;
+    EditEnviaDec: TEdit;
+    ButtonEnviaDec: TButton;
     procedure ButtonConfiguraClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ButtonEnviaClick(Sender: TObject);
     procedure ButtonRecebeClick(Sender: TObject);
+    procedure ButtonEnviaDecClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,6 +90,20 @@ Envia:= AnsiChar(Dado[1]);
   end;
 end;
 
+procedure TFormMain.ButtonEnviaDecClick(Sender: TObject);
+var
+Envia: AnsiChar;
+Dado: integer;
+//Flag_envia: boolean;
+begin
+Dado:= strtoint(EditEnviaDec.Text);
+Envia:= AnsiChar(Chr(Dado));
+  if (TX_catacter(Envia)=false) then
+  begin
+    showmessage('O caractere não foi enviado');
+  end;
+end;
+
 procedure TFormMain.ButtonRecebeClick(Sender: TObject);
 begin
 le_porta;
@@ -96,6 +115,7 @@ le_porta;
   else
   begin
     EditRecebe.text:=recebe_dado(0);
+    EditRecebeDec.Text:=inttostr(Ord(recebe_dado(0)));
   end;
 
 end;

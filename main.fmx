@@ -3,8 +3,8 @@ object FormMain: TFormMain
   Top = 0
   BorderStyle = Single
   Caption = 'Simples Hyper Terminal'
-  ClientHeight = 249
-  ClientWidth = 333
+  ClientHeight = 342
+  ClientWidth = 337
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop, iPhone, iPad]
@@ -36,7 +36,7 @@ object FormMain: TFormMain
   object ButtonRecebe: TButton
     Height = 22.000000000000000000
     Position.X = 8.000000000000000000
-    Position.Y = 72.000000000000000000
+    Position.Y = 104.000000000000000000
     TabOrder = 1
     Text = 'Recebe'
     Width = 121.000000000000000000
@@ -44,7 +44,7 @@ object FormMain: TFormMain
   end
   object EditEnvia: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 6
+    TabOrder = 8
     Position.X = 136.000000000000000000
     Position.Y = 40.000000000000000000
     Width = 185.000000000000000000
@@ -52,9 +52,9 @@ object FormMain: TFormMain
   end
   object EditRecebe: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 4
+    TabOrder = 5
     Position.X = 136.000000000000000000
-    Position.Y = 72.000000000000000000
+    Position.Y = 104.000000000000000000
     Width = 185.000000000000000000
     Height = 22.000000000000000000
   end
@@ -69,7 +69,7 @@ object FormMain: TFormMain
   end
   object EditPorta: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 5
+    TabOrder = 7
     Position.X = 248.000000000000000000
     Position.Y = 8.000000000000000000
     Width = 73.000000000000000000
@@ -79,8 +79,8 @@ object FormMain: TFormMain
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     Height = 137.000000000000000000
     Position.X = 8.000000000000000000
-    Position.Y = 104.000000000000000000
-    TabOrder = 8
+    Position.Y = 176.000000000000000000
+    TabOrder = 10
     Width = 313.000000000000000000
     Lines.Strings = (
       'Observa'#231#245'es:'
@@ -99,5 +99,39 @@ object FormMain: TFormMain
       ''
       '4)Compilado no Delphi XE6.')
     ReadOnly = True
+  end
+  object EditRecebeDec: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 136.000000000000000000
+    Position.Y = 136.000000000000000000
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object Label2: TLabel
+    StyledSettings = [Family, FontColor]
+    Height = 25.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 136.000000000000000000
+    TextSettings.Font.Size = 14.000000000000000000
+    Text = 'Recebe em  Decimal'
+    Width = 137.000000000000000000
+  end
+  object EditEnviaDec: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 136.000000000000000000
+    Position.Y = 72.000000000000000000
+    Width = 185.000000000000000000
+    Height = 22.000000000000000000
+  end
+  object ButtonEnviaDec: TButton
+    Height = 22.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 72.000000000000000000
+    TabOrder = 12
+    Text = 'Envia Decimal'
+    Width = 121.000000000000000000
+    OnClick = ButtonEnviaDecClick
   end
 end
