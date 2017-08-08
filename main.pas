@@ -38,13 +38,15 @@ var
   function ConfiguraUART
   (bauld:integer; Byte_Size: Byte; Paridade:integer; Stop_bit:integer):boolean;
   stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
-implementation
   procedure FecharPorta; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function config_porta():boolean; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function TX_catacter(var tx:AnsiChar):boolean; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   procedure le_porta; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function bytes_ler(): integer; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
   function recebe_dado(count:integer): char; stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
+  function envia_serial(var BufferEnvia: AnsiString):DWORD; stdcall; external 'C:\DADOS\Informatica\Info_projetos\DriveSerial\Win32\Debug\DriveSerial.dll';
+
+implementation
   {$R *.fmx}
 
 procedure TFormMain.ButtonConfiguraClick(Sender: TObject);
@@ -59,7 +61,7 @@ porta:= EditPorta.Text;
     showmessage('A porta não abriu corretamente');
   end;
 
-Flag_configura:=ConfiguraUART(2,8,3,1);
+Flag_configura:=ConfiguraUART(7,8,3,1);
   if (Flag_configura<>false) then
   begin
     ShowMessage('A porta foi configurada corretamente.');
@@ -80,14 +82,22 @@ procedure TFormMain.ButtonEnviaClick(Sender: TObject);
 var
 Envia: AnsiChar;
 Dado: string;
+AnsiDado: AnsiString;
 //Flag_envia: boolean;
 begin
 Dado:= EditEnvia.Text;
-Envia:= AnsiChar(Dado[1]);
-  if (TX_catacter(Envia)=false) then
+//Envia:= AnsiChar(Dado[1]);
+AnsiDado:=AnsiString(Dado);
+
+  if envia_serial(AnsiDado)=0 then
   begin
-    showmessage('O caractere não foi enviado');
+  ShowMessage('Não foi possivel enviar o dado');
   end;
+
+  //  if (TX_catacter(Envia)=false) then
+//  begin
+//    showmessage('O caractere não foi enviado');
+//  end;
 end;
 
 procedure TFormMain.ButtonEnviaDecClick(Sender: TObject);
